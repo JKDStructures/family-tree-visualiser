@@ -1,5 +1,0 @@
-streamlit
-pandas
-graphviz
-fpdf
-Pillow
