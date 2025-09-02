@@ -84,7 +84,7 @@ def build_graph() -> Digraph:
     labelloc="t",
     fontsize="32",
     fontname="Arial Bold",
-    label=f'<<font point-size="28"><b>{st.session_state.title}</b></font>>')
+    label=f'<<font point-size="50"><b>{st.session_state.title}</b></font>>')
 
     individual_ids = [e["id"] for e in st.session_state.entities if e.get("type") == "Individual"]
 
