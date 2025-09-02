@@ -87,11 +87,6 @@ def build_graph() -> Digraph:
         label=f'<<font point-size="28"><b>{st.session_state.title}</b></font>>'
     )
 
-    # ... then add nodes and edges below ...
-    return g
-
-
-
 
     individual_ids = [e["id"] for e in st.session_state.entities if e.get("type") == "Individual"]
 
