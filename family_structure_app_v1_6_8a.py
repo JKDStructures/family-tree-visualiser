@@ -82,7 +82,7 @@ def build_graph() -> Digraph:
     splines="ortho",
     bgcolor="white",
     labelloc="t",
-    fontsize="20",
+    fontsize="32",
     fontname="Arial Bold",
     label=f'<<font point-size="28"><b>{st.session_state.title}</b></font>>')
 
