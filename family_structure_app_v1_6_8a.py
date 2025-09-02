@@ -15,7 +15,7 @@ ENTITY_TYPES = ["Individual", "Company", "Trust", "SMSF", "Other"]
 TYPE_STYLE = {
     "Individual": dict(shape="ellipse", fillcolor="#3b82f6", style="filled", fontcolor="white"),
     "Company":    dict(shape="box",     fillcolor="#10b981", style="filled", fontcolor="white"),
-    "Trust":      dict(shape="hexagon", fillcolor="#1f2937", style="filled", fontcolor="white"),
+    "Trust":      dict(shape="trapezium", fillcolor="#1f2937", style="filled", fontcolor="white"),
     "SMSF":       dict(shape="diamond", fillcolor="#7c3aed", style="filled", fontcolor="white"),
     "Other":      dict(shape="triangle",     fillcolor="#9ca3af", style="filled", fontcolor="white"),
 }
