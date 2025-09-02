@@ -76,14 +76,16 @@ def scrub_new_custom_fields_from_df(df: pd.DataFrame):
 # Build Graphviz DOT
 # --------------------------
 def build_graph() -> Digraph:
-  g = Digraph("G", engine="dot")   # or "sfdp" if you want force layout
+g = Digraph("G", engine="dot")   # or "sfdp" if you want force layout
 g.attr(
     rankdir=st.session_state.rankdir,
     splines="true",       # allow curved lines
     overlap="false",      # prevent overlaps
     labelloc="t",
     fontsize="20",
-    label=f'<<font point-size="28"><b>{st.session_state.title}</b></font>>')
+    label=f'<<font point-size="28"><b>{st.session_state.title}</b></font>>'
+)
+
 
     individual_ids = [e["id"] for e in st.session_state.entities if e.get("type") == "Individual"]
 
