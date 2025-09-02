@@ -76,15 +76,15 @@ def scrub_new_custom_fields_from_df(df: pd.DataFrame):
 # Build Graphviz DOT
 # --------------------------
 def build_graph() -> Digraph:
-    g = Digraph("G")
+  g = Digraph("G", engine="dot")   # or "sfdp" if you want force layout
     g.attr(
     rankdir=st.session_state.rankdir,
-    splines="true",
-    bgcolor="white",
+    splines="true",       # allow curved lines
+    overlap="false",      # prevent overlaps
     labelloc="t",
     fontsize="20",
-    fontname="Arial Bold",
-    label=f'<<font point-size="28"><b>{st.session_state.title}</b></font>>')
+    label=f'<<font point-size="28"><b>{st.session_state.title}</b></font>>'
+)
 
     individual_ids = [e["id"] for e in st.session_state.entities if e.get("type") == "Individual"]
 
@@ -116,7 +116,13 @@ def build_graph() -> Digraph:
 
     # Edges with near-line labels
     for r in st.session_state.relationships:
-        g.edge(r["source_id"],r["target_id"],label=r.get("label",""),labelfloat="true",fontsize="10",labeldistance="0.5",labelangle="0")
+       g.edge(
+    r["source_id"], r["target_id"],
+    label=r.get("label",""),
+    labelfloat="true",
+    fontsize="10",
+    labeldistance="0.5"   # just above 0, keeps it close but avoids collisions
+)
 
     return g
 
