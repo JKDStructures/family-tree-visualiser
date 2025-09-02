@@ -83,8 +83,7 @@ def build_graph() -> Digraph:
     overlap="false",      # prevent overlaps
     labelloc="t",
     fontsize="20",
-    label=f'<<font point-size="28"><b>{st.session_state.title}</b></font>>'
-)
+    label=f'<<font point-size="28"><b>{st.session_state.title}</b></font>>')
 
     individual_ids = [e["id"] for e in st.session_state.entities if e.get("type") == "Individual"]
 
