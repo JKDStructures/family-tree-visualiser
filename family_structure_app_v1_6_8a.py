@@ -77,16 +77,14 @@ def scrub_new_custom_fields_from_df(df: pd.DataFrame):
 # --------------------------
 def build_graph() -> Digraph:
     g = Digraph("G")
-g.attr(
+    g.attr(
     rankdir=st.session_state.rankdir,
     splines="ortho",
     bgcolor="white",
     labelloc="t",
-    fontsize="20",   # base font size
+    fontsize="20",
     fontname="Arial Bold",
-    # use HTML-like label to force larger, bold title
-    label=f'<<font point-size="28"><b>{st.session_state.title}</b></font>>'
-)
+    label=f'<<font point-size="28"><b>{st.session_state.title}</b></font>>')
 
     individual_ids = [e["id"] for e in st.session_state.entities if e.get("type") == "Individual"]
 
