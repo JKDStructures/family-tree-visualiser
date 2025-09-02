@@ -87,6 +87,7 @@ g.attr(
 )
 
 
+
     individual_ids = [e["id"] for e in st.session_state.entities if e.get("type") == "Individual"]
 
     # Cluster for Individuals (border invisible)
