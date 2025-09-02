@@ -79,7 +79,7 @@ def build_graph() -> Digraph:
     g = Digraph("G")
     g.attr(
         rankdir=st.session_state.rankdir,
-        splines="true",        # allow curved lines
+        splines="ortho",        # allow curved lines
         overlap="false",       # avoid line overlaps
         bgcolor="white",
         fontsize="18",
