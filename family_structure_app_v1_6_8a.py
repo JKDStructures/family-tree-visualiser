@@ -76,15 +76,20 @@ def scrub_new_custom_fields_from_df(df: pd.DataFrame):
 # Build Graphviz DOT
 # --------------------------
 def build_graph() -> Digraph:
-g=Digraph("G",engine="dot")
-g.attr(
-    rankdir=st.session_state.rankdir,
-    splines="true",       # allow curved lines
-    overlap="false",      # prevent overlaps
-    labelloc="t",
-    fontsize="20",
-    label=f'<<font point-size="28"><b>{st.session_state.title}</b></font>>'
-)
+    g = Digraph("G")
+    g.attr(
+        rankdir=st.session_state.rankdir,
+        splines="true",        # allow curved lines
+        overlap="false",       # avoid line overlaps
+        bgcolor="white",
+        fontsize="18",
+        labelloc="t",
+        label=f'<<font point-size="28"><b>{st.session_state.title}</b></font>>'
+    )
+
+    # ... then add nodes and edges below ...
+    return g
+
 
 
 
