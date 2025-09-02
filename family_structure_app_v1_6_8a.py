@@ -77,7 +77,7 @@ def scrub_new_custom_fields_from_df(df: pd.DataFrame):
 # --------------------------
 def build_graph() -> Digraph:
   g = Digraph("G", engine="dot")   # or "sfdp" if you want force layout
-    g.attr(
+g.attr(
     rankdir=st.session_state.rankdir,
     splines="true",       # allow curved lines
     overlap="false",      # prevent overlaps
