@@ -116,7 +116,7 @@ def build_graph() -> Digraph:
 
     # Edges with near-line labels
     for r in st.session_state.relationships:
-        g.edge(r["source_id"], r["target_id"], xlabel=r.get("label",""), decorate="true", fontsize="10")
+        g.edge(r["source_id"],r["target_id"],label=r.get("label",""),labelfloat="true",fontsize="10",labeldistance="1.2",labelangle="0")
 
     return g
 
