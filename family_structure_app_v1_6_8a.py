@@ -79,7 +79,7 @@ def build_graph() -> Digraph:
     g = Digraph("G")
     g.attr(
     rankdir=st.session_state.rankdir,
-    splines="ortho",
+    splines="true",
     bgcolor="white",
     labelloc="t",
     fontsize="20",
@@ -116,7 +116,7 @@ def build_graph() -> Digraph:
 
     # Edges with near-line labels
     for r in st.session_state.relationships:
-        g.edge(r["source_id"],r["target_id"],label=r.get("label",""),labelfloat="true",fontsize="10",labeldistance="0",labelangle="0")
+        g.edge(r["source_id"],r["target_id"],label=r.get("label",""),labelfloat="true",fontsize="10",labeldistance="0.5",labelangle="0")
 
     return g
 
